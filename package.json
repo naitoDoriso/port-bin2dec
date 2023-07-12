@@ -1,0 +1,24 @@
+{
+  "name": "00",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naitoDoriso/port-bin2dec.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naitoDoriso/port-bin2dec/issues"
+  },
+  "homepage": "https://github.com/naitoDoriso/port-bin2dec#readme"
+}
