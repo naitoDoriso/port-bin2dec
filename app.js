@@ -22,6 +22,6 @@ app.post('/bin2dec', (req,res)=>{
     res.render('bin2dec/index',{binary:binary, dec:dec});
 });
 
-app.listen(3000, ()=>{
-    console.log('Running on http://localhost:3000...');
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log('Running...');
 });
