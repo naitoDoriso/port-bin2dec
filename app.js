@@ -4,11 +4,15 @@ const app = express();
 app.set('view engine','ejs');
 
 app.get('/', (req,res)=>{
-    res.send('Hello World!');
+    res.render('home/index');
 });
 
 app.get('/bin2dec', (req,res)=>{
     res.render('bin2dec/index');
+});
+
+app.get('/portfolio_icon.png', (req,res)=>{
+    res.sendFile(__dirname+'/portfolio_icon.png');
 });
 
 app.use(express.json());

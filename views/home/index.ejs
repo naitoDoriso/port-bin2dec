@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio knightneat</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: radial-gradient(#30a9ff, #2a3438);
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+        }
+
+        div.welcome {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0;
+            position: relative;
+        }
+
+        div.welcome > p {
+            margin: 0;
+            font-size: 1.6em;
+        }
+
+        div.welcome > p > span {
+            background-image: linear-gradient(to left, purple, indigo, blue, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-weight: bold;
+            color: transparent;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        div.welcome > p > span:active {
+            filter: brightness(60%);
+        }
+
+        div.welcome > p > span:after {
+            position: absolute;
+            z-index: -1;
+            top: 2px;
+            left: -2.5px;
+            content: 'knightneat';
+            color: black;
+        }
+
+        div.welcome > :nth-child(3) {
+            transform: translate(-8%, 0);
+        }
+
+        div.welcome > select {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.6em;
+            padding: 0;
+            height: 35px;
+            width: 35px;
+            appearance: none;
+            text-align: center;
+            border: 0;
+            background-color: transparent;
+            transform: translate(-10px, -1px);
+            outline: 0;
+            z-index: 3;
+        }
+
+        div.hover {
+            position: absolute;
+            width: 18px;
+            height: 35px;
+            top:1%;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+            z-index: 2;
+            left: 108px;
+        }
+
+        div.welcome > select:hover ~ div.hover {
+            background-color: #d5d5d566;
+        }
+
+        div.welcome > select:active ~ div.hover {
+            background-color: #a7a7a766;
+        }
+
+        div.welcome img {
+            transform: rotate(0deg);
+            transition: transform .5s ease-in-out;
+            margin-left: -10px;
+        }
+
+        main.m1 {
+            width: 1370px;
+            margin: 0 auto;
+            margin-top: 210px;
+        }
+
+        div.welcome > img {
+            animation: wave 1s infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: rotate(0deg);
+                animation-play-state: running;
+            }
+
+            50% {
+                transform: rotate(90deg);
+                animation-play-state: running;
+            }
+
+            100% {
+                transform: rotate(0deg);
+                animation-play-state: paused;
+            }
+        }
+
+        .job {
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            border: 5px solid black;
+            border-width: 25px 10px;
+            border-radius: 8px;
+        }
+
+        .job > h2 {
+            margin: 0;
+            line-height: 0.82em;
+            text-align: center;
+            color: #ededed;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 230px;
+            user-select: none;
+        }
+
+        footer {
+            font-size: 70px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: black;
+            position: absolute;
+            bottom: 52px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        footer * {
+            user-select: none;
+        }
+
+        footer p {
+            padding: 0;
+            margin: 0;
+            margin-left: 14px;
+        }
+
+        .git, #rep-1, #rep-2 {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .git > p, .port > p {
+            transform: scaleX(0%);
+            transition: transform .3s ease-in-out;
+            transform-origin: 0% 50%;
+        }
+
+        .git:hover > p, .port:hover > p {
+            transform: scaleX(100%);
+        }
+
+        .git:hover > *, #rep-1:hover > *, #rep-2:hover > *, .port:hover > * {
+            filter: invert(10%);
+        }
+
+        .git:active, #rep-1:active, #rep-2:active, .port:active {
+            transform: scale(95%);
+        }
+
+        .github {
+            width: 85px;
+        }
+
+        .port {
+            display: flex;
+            cursor: pointer;
+            width: fit-content;
+            height: fit-content;
+            align-items: center;
+            margin-left: 650px;
+        }
+
+        #portfolio {
+            height: 85px;
+        }
+
+        #git-box {
+            z-index: 5;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 66.67%;
+            height: 290px;
+            padding: 30px 20px;
+            background-color: #ebebeb;
+        }
+
+        #bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0000008c;
+            z-index: 4;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 25px;
+            margin: 28px 0;
+        }
+
+        .flex p {
+            margin-left: 15px;
+        }
+
+        #close {
+            font-weight: bolder;
+            color: #666;
+            font-size: 20px;
+            transform: scaleX(120%);
+            position: absolute;
+            top: 16px;
+            right: 27px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <main class="m1">
+            <div class="welcome">
+                <p>Bem-vind</p><select><option value="o">o</option><option value="a">a</option><option value="e">e</option></select><p>! Eu sou o <span>knightneat<span></p>
+                <img src="https://em-content.zobj.net/thumbs/160/microsoft/74/waving-hand-sign_1f44b.png" alt="wave-emoji" width="32px" height="32px">
+                <div class="hover"></div>
+            </div>
+            <div class="job">
+                <h2>PROGRAMADOR BACKEND</h2>
+            </div>
+        </main>
+    </section>
+    <footer>
+        <main class="m1" style="display:flex;flex-direction:row;align-items:center;">
+            <div class="git">
+                <img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github_icon">
+                <p>GITHUB</p>
+            </div>
+            <div class="port">
+                <img id="portfolio" src="./portfolio_icon.png" alt="portfolio_icon">
+                <p>PROJETOS</p>
+            </div>
+        </main>
+    </footer>
+
+    <div id="bg" style="display: none;"></div>
+    <div id="git-box" style="display: none;">
+        <span id="close">X</span>
+        <div class="flex" id="rep-1">
+            <img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github_icon">
+            <p>REPOSITÓRIO DO PORTFÓLIO</p>
+        </div>
+        <hr>
+        <div class="flex" id="rep-2">
+            <img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github_icon">
+            <p>TODOS OS REPOSITÓRIOS</p>
+        </div>
+    </div>
+
+    <script>
+        if (localStorage.getItem("pronome")) {
+            document.querySelector("div.welcome > select > option[value="+localStorage.getItem("pronome")+"]").selected = true;
+        }
+
+        document.querySelector('select').addEventListener('change', (e)=>{
+            localStorage.setItem("pronome",e.target.value);
+        });
+
+        document.querySelector('div.welcome > p > span').addEventListener('click', ()=>{
+            stop = !stop;
+            if (stop == false){
+                document.querySelector('div.welcome > img').style.animation = 'wave 1s infinite';
+                rainbow();
+            }
+        });
+
+        const cores = ['purple', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red'];
+        let cnt = 0;
+        let stop = false;
+        let interv = null;
+        let rainbow = () => {
+            interv == null ? void(0) : clearInterval(interv);
+            interv = setInterval(()=>{
+                let txt = 'linear-gradient(to left,';
+                for (i=0; i<cores.length; i++) {
+                    txt += cores[cnt]+(i==cores.length-1 ? '' : ', ');
+                    cnt = cnt < cores.length-1 ? cnt+1 : 0;
+                }
+                cnt = cnt < cores.length-1 ? cnt+1 : 0;
+                document.querySelector('div.welcome > p > span').style.backgroundImage = txt;
+
+                if (stop == true && cnt == 1) {
+                    tempo = Math.floor(Math.random()*500)+99;
+                    setTimeout(()=>{
+                        clearInterval(interv);
+                        document.querySelector('div.welcome > img').style.animation = 'none';
+                    },tempo);
+                }
+            },120);
+        }
+        rainbow();
+
+        document.querySelector('.git').addEventListener('click', ()=>{
+            document.querySelector('#git-box').style.display = 'block';
+            document.querySelector('#bg').style.display = 'block';
+        });
+
+        document.querySelector('#close').addEventListener('click', ()=>{
+            document.querySelector('#git-box').style.display = 'none';
+            document.querySelector('#bg').style.display = 'none';
+        });
+
+        document.querySelector('#rep-1').onclick = () => {window.open('https://github.com/naitoDoriso/portfolio')};
+        document.querySelector('#rep-2').onclick = () => {window.open('https://github.com/naitoDoriso?tab=repositories')};
+    </script>
+</body>
+</html>
